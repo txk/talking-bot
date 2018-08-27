@@ -8,6 +8,8 @@ var botbuilder_azure = require("botbuilder-azure");
 var https = require('https');
 var _ = require('lodash');
 
+var $cards = require('./cards');
+
 // Setup Restify Server
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function () {
@@ -33,7 +35,13 @@ bot.set('storage', inMemoryStorage);
 
 bot.dialog('/', function (session) {
 
-    session.say('Hello! I am Quiggly and can help you find you personalized health tests. Want to you want to do?', 'Hello! I am Quiggly and can help you find you personalized health tests. Want to you want to do?', {inputHint: builder.InputHint.ignoringInput});
+    var card = $cards.greetingCard({firstName: 'Thomas'});
+
+    var msg = new builder.Message(session)
+        .addAttachment(card);
+    session.send(msg);
+
+    //session.say('Hello! I am Quiggly and can help you find you personalized health tests. Want to you want to do?', 'Hello! I am Quiggly and can help you find you personalized health tests. Want to you want to do?', {inputHint: builder.InputHint.ignoringInput});
 });
 
 
