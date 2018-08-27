@@ -33,7 +33,7 @@ bot.set('storage', inMemoryStorage);
 
 bot.dialog('/', function (session) {
 
-    session.say('Hello John Smith.', 'Hello John Smith.', {inputHint: builder.InputHint.ignoringInput});
+    session.say('Hello! I am Quiggly and can help you find you personalized health tests. Want to you want to do?', 'Hello! I am Quiggly and can help you find you personalized health tests. Want to you want to do?', {inputHint: builder.InputHint.ignoringInput});
 });
 
 
