@@ -15,6 +15,7 @@ function greetingCard(args) {
         'content': {
             '$schema': 'http://adaptivecards.io/schemas/adaptive-card.json',
             'type': 'AdaptiveCard',
+            'speak': '<s>Weather forecast for Monday is high of 62 and low of 42 degrees with a 20% chance of rain</s><s>Winds will be 5 mph from the northeast</s>',
             'version': '1.0',
             'body': [
                 {
